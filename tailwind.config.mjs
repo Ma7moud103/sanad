@@ -11,6 +11,16 @@ export default {
     },
     extend: {
       screens: {
+        sm: "476px",
+        // => @media (min-width: 576px) { ... }
+
+        md: "760px",
+        // => @media (min-width: 960px) { ... }
+
+        lg: "960px",
+        // => @media (min-width: 1440px) { ... }
+        xl: "1024px",
+        "2xl": "1280px",
         "3xl": "1600px",
         "4xl": "1920px",
         "5xl": "2560px",
@@ -22,34 +32,35 @@ export default {
       fontFamily: {
         cairo: ['"Cairo"', "sans-serif"]
       },
+      transitionProperty: {
+        height: "height"
+      },
 
       colors: {
-        bg_mainLight: "#DDE9FF",
-        bg_red: "#FFDDDD",
-        text_res: "#D93434",
-        bg_orange: "#FFF2DD",
-        text_orange: "#D98634",
-        text_green: "#409261",
-        input_border: "#E6E9EA",
-        light_white: "#F4F7FE",
-
-        bg_green: "#E9FFEF",
-        bg_gray: "#E4E4E4",
-        err: "#F56767",
-        green: "#56CC5B",
-        blue_light: "#2684FFCC",
-        icon: "rgba(227, 239, 255, 0.7)",
-        blurBg: "rgba(0, 0, 0, 0.6)",
-        overlay: "rgba(0, 0, 0, 0.3)",
-
-        gray: "red",
-        mainColor: "#023E8ACC",
-        secondMainColor: "#023E8AB2",
-        bg_mainLayout: "#E9EDF7",
-        borderMainColor: "#E4E4E4",
-        whiteColor_FFF: "#FFFFFF",
-        textGray: "#9CA3AFB2",
-        textColor__2: "rgba(78, 85, 86, 1)"
+        mainColor: "var(--main_Color)",
+        bg_mainLight: "var(--bg_mainLight)",
+        bg_red: "var(--bg_red)",
+        text_res: "var(--text_res)",
+        bg_orange: "var(--bg_orange)",
+        text_orange: "var(--text_orange)",
+        text_green: "var(--text_green)",
+        input_border: "var(--input_border)",
+        light_white: "var(--light_white)",
+        bg_green: "var(--bg_green)",
+        bg_gray: "var(--bg_gray)",
+        err: "var(--err)",
+        green: "var(--green)",
+        blue_light: "var(--blue_light)",
+        icon: "var(--icon)",
+        blurBg: "var(--blurBg)",
+        overlay: "var(--overlay)",
+        gray: "var(--red)",
+        secondMainColor: "var(--secondMainColor)",
+        bg_mainLayout: "var(--bg_mainLayout)",
+        borderMainColor: "var(--borderMainColor)",
+        whiteColor_FFF: "var(--whiteColor_FFF)",
+        textGray: "var(--textGray)",
+        textColor__2: "var(--textColor__2)"
       },
       backgroundImage: {
         HomePageBgImage: "url('/Pattern.png')"
@@ -99,10 +110,9 @@ export default {
       },
       gap: {
         mainGap: "1.3rem"
-      },
-      scrollbar: ["rounded"]
+      }
     }
   },
   plugins: [],
-  darkMode: "class"
+  darkMode: ["class"]
 };

@@ -1,28 +1,20 @@
 "use client"
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
-import { FaMoon, FaRegMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 function ThemeSwitch() {
-    const [darkMode, setDarkMode] = useState(false)
-    useEffect(() => {
-        const theme = localStorage.getItem("theme")
-        if (theme === "dark") setDarkMode(true)
-    }, [])
+    const [Mounted, setMounted] = useState(false)
+    useEffect(() => setMounted(true), [])
 
-    useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark")
-            localStorage.setItem("theme", "dark")
-        } else {
-            document.documentElement.classList.remove("dark")
-            localStorage.setItem("theme", "light")
+    const { theme, setTheme } = useTheme()
+    return Mounted ? <div className="absolute start-2 top-2">
+        {theme === 'light' ?
+            <FaMoon className="cursor-pointer  text-mainColor" size={22} onClick={() => setTheme('dark')} /> : <FaSun className="cursor-pointer text-white" size={24} onClick={() => setTheme("light")} />
         }
-    }, [darkMode])
 
+    </div> : <div className="absolute start-2 top-2 bg-slate-300 w-8 h-8 rounded-xl animate-pulse ">
 
-    return <div className="absolute start-2 top-2">
-        {darkMode ? <FaMoon className="cursor-pointer dark:text-light_white" size={22} onClick={() => setDarkMode(false)} /> : <FaSun className="cursor-pointer text-mainColor" size={24} onClick={() => setDarkMode(true)} />}
     </div>
 
 

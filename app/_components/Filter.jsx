@@ -8,7 +8,7 @@ import AddGroup from "./_modales/AddGroup";
 import UseOutSideModal from "../_hooks/UseOutSideModal";
 
 
-function Filter() {
+function Filter({ grades, courses, teachers }) {
     const [isOpened, setIsOpened] = useState(false)
 
     function onClick() {
@@ -17,19 +17,6 @@ function Filter() {
     function handleClose() {
         setIsOpened(false)
     }
-
-    useEffect(() => {
-        if (isOpened) {
-            document.querySelector("body #main").classList.add("blur")
-            document.querySelector("body #sidebar").classList.add("blur")
-        } else {
-            document.querySelector("body #main").classList.remove("blur")
-            document.querySelector("body #sidebar").classList.remove("blur")
-        }
-
-
-
-    }, [isOpened])
 
     const ref = UseOutSideModal(handleClose)
 
@@ -42,8 +29,8 @@ function Filter() {
             </Button>
 
             {isOpened && <ModalWithPortal>
-                <Overlay >
-                    <AddGroup ref={ref} handleClose={handleClose} />
+                <Overlay>
+                    <AddGroup teachers={teachers} courses={courses} grades={grades} ref={ref} handleClose={handleClose} />
                 </Overlay>
             </ModalWithPortal>
             }

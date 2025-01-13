@@ -7,8 +7,8 @@ function Logo({ w = 'auto', h = 'auto' }) {
 
                 src={logo}
                 alt="logo"
-                width={h}
-                height={h}
+            // width={h}
+            // height={h}
             />
         </div>
     )

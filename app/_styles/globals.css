@@ -2,6 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-body main .blur {
-  filter: blur(1px);
+@layer base {
+  :root {
+    --main_Color: #023e8acc;
+    --bg_mainLight: #dde9ff;
+    --bg-red: #ffdddd;
+    --text_res: #d93434;
+    --bg_orange: #fff2dd;
+    --text_orange: #d98634;
+    --text_green: #409261;
+    --input_border: #e6e9ea;
+    --light_white: #f4f7fe;
+
+    --bg_green: #e9ffef;
+    --bg_gray: #e4e4e4;
+    --err: #f56767;
+    --green: #56cc5b;
+    --blue_light: #2684ffcc;
+    --icon: rgba(227, 239, 255, 0.7);
+    --blurBg: rgba(0, 0, 0, 0.6);
+    --overlay: rgba(0, 0, 0, 0.3);
+
+    --gray: red;
+
+    --secondMainColor: #023e8ab2;
+    --bg_mainLayout: #e9edf7;
+    --borderMainColor: #e4e4e4;
+    --whiteColor_FFF: #ffffff;
+    --textGray: #9ca3afb2;
+    --textColor__2: rgba(78, 85, 86, 1);
+  }
+
+  .dark {
+    --main_Color: red;
+    --bg_mainLight: #dde9ff;
+    --bg-red: #ffdddd;
+    --text_res: #d93434;
+    --bg_orange: #fff2dd;
+    --text_orange: #d98634;
+    --text_green: #409261;
+    --input_border: #e6e9ea;
+    --light_white: #f4f7fe;
+
+    --bg_green: #e9ffef;
+    --bg_gray: #e4e4e4;
+    --err: #f56767;
+    --green: #56cc5b;
+    --blue_light: #2684ffcc;
+    --icon: rgba(227, 239, 255, 0.7);
+    --blurBg: rgba(0, 0, 0, 0.6);
+    --overlay: rgba(0, 0, 0, 0.3);
+
+    --gray: red;
+
+    --secondMainColor: #023e8ab2;
+    --bg_mainLayout: #e9edf7;
+    --borderMainColor: #e4e4e4;
+    --whiteColor_FFF: #ffffff;
+    --textGray: #9ca3afb2;
+    --textColor__2: rgba(78, 85, 86, 1);
+  }
 }
